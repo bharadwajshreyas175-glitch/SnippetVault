@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Snippet | SnippetVault</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="container">
+
+    <div class="dashboard-header">
+
+        <h1>✏️ Edit Snippet</h1>
+
+        <p class="subtitle">
+            Update your programming snippet below.
+        </p>
+
+    </div>
+
+    <div class="form-box">
+
+        <form method="POST">
+
+            <label>Title</label>
+
+            <input
+                type="text"
+                name="title"
+                value="{{ snippet[1] }}"
+                required>
+
+            <label>Language</label>
+
+            <select name="language" required>
+
+                <option value="Python" {% if snippet[2]=='Python' %}selected{% endif %}>🐍 Python</option>
+
+                <option value="Java" {% if snippet[2]=='Java' %}selected{% endif %}>☕ Java</option>
+
+                <option value="C++" {% if snippet[2]=='C++' %}selected{% endif %}>💻 C++</option>
+
+                <option value="JavaScript" {% if snippet[2]=='JavaScript' %}selected{% endif %}>🟨 JavaScript</option>
+
+                <option value="C" {% if snippet[2]=='C' %}selected{% endif %}>🔷 C</option>
+
+                <option value="HTML" {% if snippet[2]=='HTML' %}selected{% endif %}>🌐 HTML</option>
+
+                <option value="CSS" {% if snippet[2]=='CSS' %}selected{% endif %}>🎨 CSS</option>
+
+                <option value="SQL" {% if snippet[2]=='SQL' %}selected{% endif %}>🗄 SQL</option>
+
+            </select>
+
+            <label>Code</label>
+
+            <textarea
+                name="code"
+                rows="10"
+                required>{{ snippet[3] }}</textarea>
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                rows="4">{{ snippet[4] }}</textarea>
+
+            <div class="button-group">
+
+                <button type="submit">
+                    💾 Update Snippet
+                </button>
+
+                <a href="/home">
+                    <button type="button" class="delete-btn">
+                        ❌ Cancel
+                    </button>
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>s

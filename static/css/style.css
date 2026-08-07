@@ -1,0 +1,1290 @@
+/* ===================================================
+   SNIPPETVAULT PROFESSIONAL UI
+   Version 2.0
+=================================================== */
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+}
+
+/* =========================
+   LANDING PAGE
+========================= */
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+}
+
+/* Hero */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.hero-content{
+
+    max-width:800px;
+
+}
+
+.hero h1{
+
+    font-size:65px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.hero h2{
+
+    color:#dbeafe;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#e2e8f0;
+
+    margin-bottom:40px;
+
+}
+
+/* Button */
+
+.start-btn{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    color:white;
+
+    border:none;
+
+    padding:18px 45px;
+
+    font-size:20px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+
+}
+
+.start-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 25px 45px rgba(37,99,235,.45);
+
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:white;
+
+    color:#222;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card h3{
+
+    color:#4338ca;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    line-height:1.6;
+
+}
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+
+    color:#dbeafe;
+
+    padding:30px;
+
+}
+
+/* ===================================================
+   DASHBOARD PAGE
+=================================================== */
+
+.dashboard-page{
+
+    background:
+    linear-gradient(
+    135deg,
+    #EEF2FF 0%,
+    #E0EAFC 40%,
+    #CFDEF3 100%
+    );
+
+    color:#222;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+/* Glass Container */
+
+.container{
+
+    width:92%;
+
+    max-width:1250px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.15);
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-header h1{
+
+    font-size:52px;
+
+    color:#4338ca;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#64748b;
+
+    font-size:18px;
+
+    letter-spacing:.5px;
+
+}
+/* ===================================================
+   STATISTICS CARDS
+=================================================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.stat-card{
+
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+
+    color:white;
+
+    border-radius:18px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(79,70,229,.25);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(79,70,229,.35);
+
+}
+
+.stat-card h2{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card h3{
+
+    font-size:30px;
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.stat-card p{
+
+    color:#e5e7eb;
+
+}
+
+/* ===================================================
+   SEARCH & FILTER
+=================================================== */
+
+/* ==========================
+   Search & Filter Section
+========================== */
+
+.search-filter{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin:35px 0;
+
+}
+
+.search-box,
+.filter-box{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.search-box:hover,
+.filter-box:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.search-box h3,
+.filter-box h3{
+
+    color:#4f46e5;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+/* ===================================================
+   FORM
+=================================================== */
+
+.form-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-top:25px;
+
+    margin-bottom:40px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.form-card h2{
+
+    color:#4338ca;
+
+    margin-bottom:20px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    margin-bottom:20px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    background:#f8fafc;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#4f46e5;
+
+    background:white;
+
+    box-shadow:0 0 12px rgba(79,70,229,.2);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+
+button{
+
+    width:100%;
+
+    background:linear-gradient(135deg,#6366f1,#2563eb);
+
+    color:white;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(79,70,229,.35);
+
+}
+
+.delete-btn{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+}
+
+.delete-btn:hover{
+
+    box-shadow:0 12px 25px rgba(239,68,68,.35);
+
+}
+
+.save-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    font-size:18px;
+
+}
+/* ===================================================
+   SAVED SNIPPETS SECTION
+=================================================== */
+
+.snippets-section{
+
+    margin-top:40px;
+
+}
+
+.snippets-section h2{
+
+    color:#4338ca;
+
+    margin-bottom:25px;
+
+}
+
+/* ===================================================
+   SNIPPET CARD
+=================================================== */
+
+.snippet-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    border-left:6px solid #4f46e5;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.snippet-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/* Title */
+
+.snippet-card h3{
+
+    font-size:28px;
+
+    color:#312e81;
+
+    margin-bottom:15px;
+
+}
+
+/* Language Badge */
+
+.language-badge{
+
+    display:inline-block;
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+/* Created Date */
+
+.created-date{
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+}
+
+/* Description */
+
+.description{
+
+    color:#374151;
+
+    line-height:1.7;
+
+    margin-top:15px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===================================================
+   CODE BLOCK
+=================================================== */
+
+.snippet-card pre{
+
+    background:#0d1117;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    overflow-x:auto;
+
+    margin:18px 0;
+
+    font-size:15px;
+
+}
+
+.snippet-card code{
+
+    font-family:Consolas, monospace;
+
+    line-height:1.6;
+
+} 
+
+/* ===================================================
+   BUTTON GROUP
+=================================================== */
+
+.button-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:20px;
+    align-items:center;
+}
+
+.button-group a{
+    text-decoration:none;
+}
+
+.button-group button{
+    width:auto;
+    min-width:170px;
+}
+
+.download-btn{
+    background:linear-gradient(135deg,#10b981,#059669);
+}
+
+.download-btn:hover{
+    box-shadow:0 10px 20px rgba(16,185,129,.3);
+}
+
+.button-group a{
+
+    text-decoration:none;
+
+}
+
+.button-group button{
+
+    min-width:150px;
+
+}
+
+/* ===================================================
+   EMPTY STATE
+=================================================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:50px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.empty-state h3{
+
+    color:#4338ca;
+
+    margin-bottom:15px;
+
+}
+
+.empty-state p{
+
+    color:#64748b;
+
+}
+/* ===================================================
+   RESPONSIVE DESIGN
+=================================================== */
+
+@media (max-width: 992px){
+
+    .container{
+        width:95%;
+        padding:25px;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .search-filter{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .dashboard-header h1{
+        font-size:36px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+.button-group{
+    flex-direction:column;
+}
+
+.button-group button{
+    width:100%;
+}   
+
+    .button-group button{
+        width:100%;
+    }
+
+    .snippet-card{
+        padding:20px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+        padding:15px;
+    }
+
+    .hero{
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .start-btn{
+        width:100%;
+    }
+
+}
+
+/* ===================================================
+   SCROLLBAR
+=================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e5e7eb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#6366f1;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4338ca;
+
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+
+.container,
+.stat-card,
+.form-card,
+.snippet-card{
+
+    animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================================
+   HORIZONTAL RULE
+=================================================== */
+
+hr{
+
+    border:none;
+
+    height:2px;
+
+    background:linear-gradient(to right,#4f46e5,#818cf8);
+
+    margin:35px 0;
+
+    border-radius:10px;
+
+}
+
+/* ===================================================
+   LINKS
+=================================================== */
+
+a{
+
+    text-decoration:none;
+
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+
+.footer{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin-top:50px;
+
+    font-size:15px;
+
+}
+
+/* ===================================================
+   PROFESSIONAL FINISH
+=================================================== */
+
+.container:hover{
+
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+}
+
+.snippet-card:hover{
+
+    border-left:6px solid #2563eb;
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+/* ==========================
+   Add Snippet Form
+========================== */
+
+.form-box{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    margin:40px 0;
+
+}
+
+.form-title{
+
+    text-align:center;
+
+    color:#4f46e5;
+
+    font-size:32px;
+
+    margin-bottom:10px;
+
+}
+
+.form-subtitle{
+
+    text-align:center;
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+
+    font-size:16px;
+
+}
+
+.form-box label{
+
+    font-weight:600;
+
+    color:#374151;
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+.form-box input,
+.form-box textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.form-box input:focus,
+.form-box textarea:focus{
+
+    border-color:#6366f1;
+
+    box-shadow:0 0 10px rgba(99,102,241,.2);
+
+    outline:none;
+
+}
+
+.form-box button{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:17px;
+
+    border-radius:12px;
+
+}
+/* ==========================
+   Snippet Card
+========================== */
+
+.snippet-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.language-badge{
+
+    background:linear-gradient(135deg,#6366f1,#8b5cf6);
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+.created-date{
+
+    color:#6b7280;
+
+    margin-top:8px;
+
+    font-size:14px;
+
+}
+
+.description{
+
+    color:#374151;
+
+    margin-top:18px;
+
+    line-height:1.8;
+
+}
+
+.snippet-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.snippet-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 40px rgba(99,102,241,.20);
+
+}
+/* ==========================================
+   Toast Notification
+========================================== */
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    color:white;
+
+    padding:16px 28px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transform:translateX(120px);
+
+    transition:all .4s ease;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+/* ==========================================
+   Download Button
+========================================== */
+
+.download-btn{
+
+    background:linear-gradient(135deg,#059669,#10b981);
+
+}
+
+.download-btn:hover{
+
+    box-shadow:0 10px 20px rgba(16,185,129,.35);
+
+}
+/* ==========================
+   Language Badge Colors
+========================== */
+
+.language-badge{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:20px;
+    color:white;
+    font-weight:bold;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+/* Python */
+.language-badge.python{
+    background:#3776AB;
+}
+
+/* Java */
+.language-badge.java{
+    background:#E76F00;
+}
+
+/* C++ */
+.language-badge.c\+\+{
+    background:#00599C;
+}
+
+/* C */
+.language-badge.c{
+    background:#555555;
+}
+
+/* HTML */
+.language-badge.html{
+    background:#E34F26;
+}
+
+/* CSS */
+.language-badge.css{
+    background:#1572B6;
+}
+
+/* JavaScript */
+.language-badge.javascript{
+    background:#F7DF1E;
+    color:black;
+}
+
+/* SQL */
+.language-badge.sql{
+    background:#336791;
+}
+
+/* PHP */
+.language-badge.php{
+    background:#777BB4;
+}
+/* ==========================================
+   Professional Code Block
+========================================== */
+
+.code-container{
+
+    margin-top:15px;
+    margin-bottom:20px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+}
+
+.code-header{
+
+    background:#111827;
+    color:white;
+    padding:12px 18px;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.code-header span{
+
+    font-size:15px;
+
+}
+
+.code-container pre{
+
+    margin:0;
+    border-radius:0;
+
+}

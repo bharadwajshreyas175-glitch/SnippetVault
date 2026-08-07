@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnippetVault Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+
+<body class="dashboard-page">
+
+<!-- ==========================
+     Navigation Bar
+========================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🚀 SnippetVault
+    </div>
+
+    <ul class="nav-links">
+    <li><a href="/home">🏠 Dashboard</a></li>
+    <li><a href="#add-snippet">➕ Add Snippet</a></li>
+    <li><a href="#saved-snippets">📚 My Snippets</a></li>
+</ul>
+
+</nav>
+
+<div class="container">
+
+    <!-- Dashboard Header -->
+
+    <div class="dashboard-header">
+
+        <h1>Welcome Back 👋</h1>
+
+        <p class="subtitle">
+            Manage your programming snippets professionally.
+        </p>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <!-- Statistics -->
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="icon">📄</div>
+        <h2>{{ total_snippets }}</h2>
+        <p>Total Snippets</p>
+    </div>
+
+    <div class="stat-card">
+    <div class="icon">🐍</div>
+    <h2>{{ python_count }}</h2>
+    <p>Python</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">☕</div>
+    <h2>{{ java_count }}</h2>
+    <p>Java</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">💻</div>
+    <h2>{{ cpp_count }}</h2>
+    <p>C++</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">🟨</div>
+    <h2>{{ javascript_count }}</h2>
+    <p>JavaScript</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">🌐</div>
+    <h2>{{ html_count }}</h2>
+    <p>HTML</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">🎨</div>
+    <h2>{{ css_count }}</h2>
+    <p>CSS</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">🗄️</div>
+    <h2>{{ sql_count }}</h2>
+    <p>SQL</p>
+</div>
+
+<div class="stat-card">
+    <div class="icon">🔷</div>
+    <h2>{{ c_count }}</h2>
+    <p>C</p>
+</div>
+
+</div>
+    </div>
+
+    <!-- Search & Filter -->
+
+    <div class="search-filter">
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <h3>🔍 Search Snippets</h3>
+
+            <form method="GET" action="/home">
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search snippets...">
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Filter -->
+
+        <div class="filter-box">
+
+            <h3>🗂 Filter by Language</h3>
+
+            <form method="GET" action="/home">
+
+                <select name="language">
+
+    <option value="">All Languages</option>
+
+    <option value="Python"> Python</option>
+
+    <option value="Java"> Java</option>
+
+    <option value="C++">C++</option>
+
+    <option value="JavaScript">JavaScript</option>
+
+    <option value="HTML"> HTML</option>
+
+    <option value="CSS"> CSS</option>
+
+    <option value="SQL"> SQL</option>
+
+    <option value="C"> C</option>
+
+</select>
+
+                </select>
+
+                <button type="submit">
+                    Filter
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Add Snippet -->
+
+    <div class="form-box" id="add-snippet">
+
+        <div class="form-card">
+
+            <h2 class="form-title">
+    ➕ Add New Snippet
+</h2>
+
+<p class="form-subtitle">
+    Save your programming snippets securely and access them anytime.
+</p>
+
+            <form method="POST">
+
+                <label>Title</label>
+
+                <input
+                    type="text"
+                    name="title"
+                    required>
+
+                <label>Language</label>
+
+<select name="language" required>
+
+    <option value="">Select Language</option>
+
+    <option value="Python">🐍 Python</option>
+
+    <option value="Java">☕ Java</option>
+
+    <option value="C++">💻 C++</option>
+
+    <option value="JavaScript">🟨 JavaScript</option>
+
+    <option value="C">🔷 C</option>
+
+    <option value="HTML">🌐 HTML</option>
+
+    <option value="CSS">🎨 CSS</option>
+
+    <option value="SQL">🗄 SQL</option>
+
+</select>
+                <label>Code</label>
+
+                <textarea
+                    rows="8"
+                    name="code"
+                    required></textarea>
+
+                <label>Description</label>
+
+                <textarea
+                    rows="3"
+                    name="description"></textarea>
+
+                <button type="submit">
+                    💾 Save Snippet
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Saved Snippets -->
+
+   <h2 class="saved-title" id="saved-snippets">
+    📚 My Snippets
+</h2>
+    {% if snippets %}
+
+        {% for snippet in snippets %}
+
+        <div class="snippet-card">
+
+    <div class="snippet-header">
+
+        <div>
+            <h3>{{ snippet[1] }}</h3>
+            <p class="created-date">📅 {{ snippet[5] }}</p>
+        </div>
+<span class="language-badge {{ snippet[2]|lower|replace('++','') }}">
+    {{ snippet[2] }}
+</span>
+
+    </div>
+
+    <<div class="code-container">
+
+    <div class="code-header">
+
+        <span>💻 {{ snippet[2] }}</span>
+
+    </div>
+
+    <pre><code class="language-{{ snippet[2]|lower }}">
+{{ snippet[3] }}
+    </code></pre>
+
+</div>
+
+    <p class="description">
+        {{ snippet[4] }}
+    </p>
+
+    <div class="button-group">
+
+    <!-- Edit -->
+    <a href="/edit/{{ snippet[0] }}">
+        <button type="button">
+            ✏️ Edit
+        </button>
+    </a>
+
+    <!-- Delete -->
+    <a href="/delete/{{ snippet[0] }}"
+       onclick="return confirm('Delete this snippet?');">
+
+        <button type="button" class="delete-btn">
+            🗑️ Delete
+        </button>
+
+    </a>
+
+    <!-- Copy -->
+    <button
+        type="button"
+        onclick="copyCode(`{{ snippet[3] }}`)">
+        📋 Copy Code
+    </button>
+
+    <!-- Download -->
+    <a href="/download/{{ snippet[0] }}">
+        <button
+            type="button"
+            class="download-btn">
+            📥 Download
+        </button>
+    </a>
+
+</div>
+
+
+</div>
+        <br>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h3>No snippets available.</h3>
+
+    {% endif %}
+
+</div>
+
+<footer class="footer">
+
+    <h3>🚀 SnippetVault</h3>
+
+    <p>
+        Developed by Shreyas Bharadwaj H A
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
+
+</footer>
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+    ✅ Code copied successfully!
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script>
+
+hljs.highlightAll();
+
+function copyCode(code){
+
+    navigator.clipboard.writeText(code)
+        .then(function(){
+
+            const toast = document.getElementById("toast");
+
+            toast.classList.add("show");
+
+            setTimeout(function(){
+
+                toast.classList.remove("show");
+
+            }, 2500);
+
+        })
+        .catch(function(){
+
+            alert("❌ Failed to copy code.");
+
+        });
+
+}
+
+</script>
+
+</body>
+
+</html>
