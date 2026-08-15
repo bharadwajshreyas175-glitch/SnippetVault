@@ -1,17 +1,18 @@
-import webbrowser
-from threading import Timer
+import os
 from flask import Flask, render_template, request, redirect, url_for, Response
+from datetime import datetime
+import mysql.connector
 from datetime import datetime
 import mysql.connector
 app = Flask(__name__)
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="shreyas",  # Replace with your password
-        database="snippets_manager"
+        host=os.environ.get("MYSQLHOST", "localhost"),
+        port=int(os.environ.get("MYSQLPORT", 3306)),
+        user=os.environ.get("MYSQLUSER", "root"),
+        password=os.environ.get("MYSQLPASSWORD", "shreyas"),
+        database=os.environ.get("MYSQLDATABASE", "snippets_manager")
     )
-
 # ==========================
 # Welcome Page
 # ==========================
@@ -269,10 +270,6 @@ def add_page():
     return render_template("add.html")
 
 
-def open_browser():
-    webbrowser.open("http://127.0.0.1:5000")
-
-
 if __name__ == "__main__":
-    Timer(1, open_browser).start()
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
